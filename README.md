@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Community
+- This project focuses on the development of versatile community platform 
+aimed at facilitating seamless communication and collaboration among 
+users from diverse communities. The platform offers a wide range of 
+features including the creation of customizable channels, enabling users to 
+engage in discussions, sharing resources, and collaborate on projects within 
+their respective communities. Additionally, users have the flexibility to 
+engage in private one-on-one chats, video calls, and audio calls, enhancing 
+personal connections and fostering meaningful interactions. 
 
-## Getting Started
+## Key Features:
 
-First, run the development server:
+- 🤯 Real-time messaging using Socket.io
+- 📂 Send attachments as messages using UploadThing
+- 🌐 Delete & Edit messages in real time for all users
+- 🚀 Create Text, Audio and Video call Channels
+- 💭 1:1 conversation between members
+- 💻 1:1 video calls between members
+- 🎨 Member management (Kick, Role change Guest / Moderator)
+- 🔗 Unique invite link generation & full working invite system
+- ♾️ Infinite loading for messages in batches of 10 (@tanstack/query)
+- 📝 Server creation and customization
+- 🦋 Beautiful UI using TailwindCSS and ShadcnUI
+- 📆 Full responsivity and mobile UI
+- 🌙 Light / Dark mode
+- ⚠️ Websocket fallback: Polling with alerts 
+- 🫙 ORM using Prisma
+- 🦈 MySQL database using Planetscale
+- 👥 Authentication with Clerk
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## :toolbox: Getting Started
+
+1. Make sure **Git** and **NodeJS** is installed.
+2. Clone this repository to your local computer.
+3. Create `.env` file in **root** directory.
+4. Contents of `.env`:
+
+```env
+# .env
+
+# clerk auth keys
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+CLERK_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# clerk redirect urls
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+# neon databse url
+DATABASE_URL=""
+
+# uploading api key and app id
+UPLOADTHING_SECRET=sk_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+UPLOADTHING_APP_ID=xxxxxxxxxxxxx
+
+# app base url
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# livekit api keys and public url
+LIVEKIT_API_KEY=XXXXXXXXXXXXXXXXX
+LIVEKIT_API_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+NEXT_PUBLIC_LIVEKIT_URL=
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Next.js Telemetry Disabled:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   - Visit the Next.js documentation or repository.
+   - Find the instructions to disable telemetry.
+   - Set `NEXT_TELEMETRY_DISABLED` to `1` in your `.env` file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. **Clerk Authentication Keys:**
 
-## Learn More
+   - Go to the Clerk website and sign in to your account.
+   - Navigate to the settings or API keys section.
+   - Generate or locate your Clerk publishable and secret keys.
+   - Set `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` accordingly in the `.env` file.
 
-To learn more about Next.js, take a look at the following resources:
+7. **Clerk Redirect URLs:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Refer to the Clerk documentation or settings.
+   - Set the required URLs for sign-in, sign-up, after sign-in, and after sign-up.
+   - Assign these URLs to `NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`, `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`, and `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` respectively in the `.env` file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+8. **Neon Database URL:**
 
-## Deploy on Vercel
+   - Access your database provider (e.g., PostgreSQL).
+   - Retrieve the necessary connection details such as username, password, host, and port.
+   - Construct the database URL using the obtained information and SSL mode.
+   - Assign the constructed URL to `DATABASE_URL` in the `.env` file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+9. **Uploading API Key and App ID:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   - Go to the UploadThing website or application.
+   - Find the section for API keys or account settings.
+   - Generate or locate your secret key and app ID.
+   - Set `UPLOADTHING_SECRET` and `UPLOADTHING_APP_ID` in the `.env` file accordingly.
+
+10. **App Base URL:**
+
+- Determine the base URL of your application.
+- Set `NEXT_PUBLIC_BASE_URL` to the base URL in the `.env` file.
+
+11. **Livekit API Keys and Public URL:**
+
+- Visit the Livekit website or dashboard.
+- Navigate to API settings or keys section.
+- Generate or locate your API key and secret.
+- Set `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, and `NEXT_PUBLIC_LIVEKIT_URL` in the `.env` file according to the obtained information.
+
+12. Save and Secure:
+
+    - Save the changes to the `.env.local` file.
+
+13. Install Project Dependencies using `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
+
+14. Now app is fully configured 👍 and you can start using this app using either one of `npm run dev` or `yarn dev`.
+
+**NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.

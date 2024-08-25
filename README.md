@@ -25,7 +25,7 @@ personal connections and fostering meaningful interactions.
 - 🌙 Light / Dark mode
 - ⚠️ Websocket fallback: Polling with alerts 
 - 🫙 ORM using Prisma
-- 🦈 MySQL database using Planetscale
+- 🦈 Postgresql database using NEON
 - 👥 Authentication with Clerk
 
 ## :toolbox: Getting Started
